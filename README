@@ -1,0 +1,5 @@
+task1: Programul va citi de la tastatura n, numerele pe care se aplica operatiile si sirul de caractere, dupa care va efectua operatiile fara sa tina cont de ordine.
+
+task2: Programul citeste asemanator numerele si caracterele, iar apoi va efectua operatiile de inmultire si impartire ignorand adunarea si scaderea, stergand la fiecare operatie din cele doua numarul cu care am inmultit sau impartit. Dupa aceea se vor efectua adunarile si scaderile.
+
+task3: Citirea este asemanatoare celorlalte, iar programul efectueaza asemanator mai intai inmultirile si impartirile, ignorand adunarea, scaderea si #, apoi operatiile # ignorand adunarea si scadera iar la final se efectueaza si acestea. Se respecta stergerea numarului cu care am inmultit, impartit si respectiv #.

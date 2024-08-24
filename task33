@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+#define SIZE 1001
+
+
+int main() {
+  int n = 0, contor1 = 1, contor2 = 1, contor = 1;
+  char s[SIZE];
+  float rez = 0, v[SIZE],v2[SIZE];
+  scanf("%d", & n);
+  for (int i = 1 ; i <= n; i++) {
+  scanf("%f", & v[i]);
+  }
+  if (n > 1) scanf("%s", s);
+  for (int i = 0; i < strlen(s); i++) {
+  if (s[i] == '+' | s[i] == '-' | s[i] == '#') v2[contor] = v[contor1], contor++, contor2++, contor1 = contor2;
+  if (s[i] == '*') v2[contor] = v[contor1] * v[contor2+1], contor2++;
+  if (s[i] == '/') v2[contor] = v[contor1] / v[contor2+1], contor2++;
+  }
+  rez = v[1];
+  contor1 = 1;
+  contor2 = 1;
+  contor = 1;
+  for (int i=0; i < strlen(s); i++) {
+  if (s[i] == '+' | s[i] == '-') v2[contor]= v[contor1], contor++, contor2++, contor1 = contor2;
+  if (s[i] == '#') v[contor] =  ( v[contor1] + v[contor2+1] ) * ( v[contor1] + v[contor2+1] ), contor2++;
+  }
+  contor1 = 1;
+  int ok = 0;
+  for (int i = 0; i < strlen(s); i++) {
+  if (s[i] == '+') rez += v2[++contor1], ok = 1;
+  if (s[i] == '-') rez -= v2[++contor1], ok = 1;
+  }
+  /*for(int i = 1; i<=n; i++){
+   printf("%f ",v[i]);
+  }*/
+  if (!ok) {
+  rez = v2[1];
+  }
+  printf("%f\n", rez);
+  return 0;
+}
+
